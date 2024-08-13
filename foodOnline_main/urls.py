@@ -26,7 +26,7 @@ from . import Views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',Views.home, name='home')
+    path('', Views.home, name='home'),
 ]
 if settings.DEBUG:  # Serve media files through Django during development
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
