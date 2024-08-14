@@ -23,7 +23,7 @@ from django.conf.urls.static import static
 
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 
 
 
@@ -32,6 +32,7 @@ from . import Views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Views.home, name='home'),
+    path('accounts/', include('accounts.urls')),
 ]
 if settings.DEBUG:  # Serve media files through Django during development
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
