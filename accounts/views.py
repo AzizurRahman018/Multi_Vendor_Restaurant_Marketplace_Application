@@ -5,7 +5,7 @@ from .forms import UserForm
 # Create your views here.
 def registerUser(request):
     if request.method =="POST":
-        print(request.POST)
+        # print(request.POST)
         form= UserForm(request.POST)
         if form.is_valid():
            #Create the user using the form
@@ -29,7 +29,7 @@ def registerUser(request):
             user = User.objects.create_user(first_name=first_name,last_name=last_name,username=username,password=password,email=email)
             user.role =User.CUSTOMER
             user.save()
-            print('User is created')
+            # print('User is created')
 
             
 
@@ -40,6 +40,9 @@ def registerUser(request):
 
            
             return redirect('registerUser')
+        else:
+           print('Invalid form')
+           print(form.errors)
     else:
 
      form = UserForm()
