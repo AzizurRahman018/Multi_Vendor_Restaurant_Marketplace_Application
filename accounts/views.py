@@ -2,6 +2,9 @@ from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from accounts.models import User
 from .forms import UserForm
+from django.contrib import messages
+
+
 # Create your views here.
 def registerUser(request):
     if request.method =="POST":
@@ -30,13 +33,7 @@ def registerUser(request):
             user.role =User.CUSTOMER
             user.save()
             # print('User is created')
-
-            
-
-
-
-
-
+            messages.success(request,"your account has been registered sucessfully")
 
            
             return redirect('registerUser')
