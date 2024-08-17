@@ -1,6 +1,6 @@
 from typing import Any
 from django import forms
-from .models import User
+from accounts.models import User
 
 class UserForm(forms.ModelForm):
     password= forms.CharField(widget=forms.PasswordInput())

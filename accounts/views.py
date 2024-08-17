@@ -1,9 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from accounts.models import User
-from .forms import UserForm
+from accounts.forms import UserForm
 from django.contrib import messages
-
+from vendor.forms import VendorForm
 
 # Create your views here.
 def registerUser(request):
@@ -49,3 +49,21 @@ def registerUser(request):
     }
 
     return render(request,'accounts/registeruser.html',context)
+
+
+
+
+def registerVendor (request):
+   
+   form = UserForm()
+   v_form = VendorForm()
+   context = {
+      'form':form,
+      'v_form':v_form
+
+
+
+   }
+   
+   
+   return render(request,'accounts/registerVendor.html',context)
