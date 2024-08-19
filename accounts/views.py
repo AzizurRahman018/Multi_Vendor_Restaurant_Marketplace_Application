@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
-from accounts.models import User
-from accounts.forms import UserForm
+from accounts.models import User ,UserProfile
+from accounts.forms import UserForm 
 from django.contrib import messages
 from vendor.forms import VendorForm
 
@@ -68,13 +68,14 @@ def registerVendor (request):
            user.save()
            vendor = v_form.save(commit=False)
            vendor.user = user
-           
-           
+           user_profile = UserProfile.objects.get(user=user)
+           vendor.user_profile = user_profile
+           vendor.save()
            
            messages.success(request,"your account has been registered sucessfully")
 
     
-           return redirect('registervendor')
+           return redirect('registerVendor')
        
        else:
            print("Invalid form")
