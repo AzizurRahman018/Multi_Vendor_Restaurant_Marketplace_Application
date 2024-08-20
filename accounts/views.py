@@ -95,3 +95,18 @@ def registerVendor (request):
    
    
    return render(request,'accounts/registerVendor.html',context)
+
+def login(request):
+
+
+    return render(request,"accounts/login.html")
+
+def logout(request):
+
+
+    return HttpResponse("hi login page")
+
+def dashboard(request):
+
+
+    return HttpResponse("hi login page")
