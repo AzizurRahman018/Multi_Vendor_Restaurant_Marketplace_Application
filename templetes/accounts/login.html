@@ -15,7 +15,7 @@
                     <p class="text-center">ORDER FOOD FROM YOUR FAVORITE Restaurant</p>
                     <hr>
                     <div id="restaurant-sets-holder">
-                        <form action="{% url 'registerUser' %}" class="form-fields-set foodbakery-dev-restaurant-form" method="post" enctype="multipart/form-data" >
+                        <form action="{% url 'login' %}" class="form-fields-set foodbakery-dev-restaurant-form" method="post" enctype="multipart/form-data" >
                             {% csrf_token %}
                             <ul class="register-add-restaurant-tab-container restaurant-information-tab-container">
                                 <li>

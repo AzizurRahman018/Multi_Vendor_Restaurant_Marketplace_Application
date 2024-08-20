@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h4>WELCOME {{user.username}} </h4>
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+     {% include "includes/alerts.html" %}
+    </div>
+</div>
+{% endblock %}
